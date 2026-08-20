@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Botón Antibloqueo — Deja de quedarte pegado sin saber qué hacer</title>
+  <meta name="description" content="Una herramienta que decide por ti una sola acción concreta según tu energía y tus minutos disponibles. Sin listas, sin decidir. Hoy $8." />
+  <meta property="og:title" content="Botón Antibloqueo — Deja de quedarte pegado sin saber qué hacer" />
+  <meta property="og:description" content="Una herramienta que decide por ti una sola acción concreta según tu energía y tus minutos disponibles. Sin listas, sin decidir. Hoy $8." />
+  <meta property="og:type" content="product" />
+  <meta property="og:url" content="https://craft-your-sales-site.lovable.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'var(--background)',
+            foreground: 'var(--foreground)',
+            card: 'var(--card)',
+            muted: 'var(--muted)',
+            'muted-foreground': 'var(--muted-foreground)',
+            primary: 'var(--primary)',
+            'primary-foreground': 'var(--primary-foreground)',
+            secondary: 'var(--secondary)',
+            'secondary-foreground': 'var(--secondary-foreground)',
+            accent: 'var(--accent)',
+            border: 'var(--border)',
+            destructive: 'var(--destructive)',
+            surface: 'var(--surface)',
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['"Inter Tight"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --background: oklch(0.16 0.015 265);
+      --foreground: oklch(0.97 0.006 90);
+      --card: oklch(0.21 0.018 265);
+      --card-foreground: oklch(0.97 0.006 90);
+      --primary: oklch(0.83 0.19 92);
+      --primary-foreground: oklch(0.2 0.04 80);
+      --secondary: oklch(0.26 0.02 265);
+      --secondary-foreground: oklch(0.97 0.006 90);
+      --muted: oklch(0.24 0.018 265);
+      --muted-foreground: oklch(0.72 0.017 265);
+      --accent: oklch(0.72 0.16 165);
+      --accent-foreground: oklch(0.18 0.03 165);
+      --destructive: oklch(0.62 0.21 25);
+      --destructive-foreground: oklch(0.98 0.005 90);
+      --border: oklch(0.31 0.02 265);
+      --input: oklch(0.31 0.02 265);
+      --surface: oklch(0.19 0.017 265);
+
+      --gradient-hero: radial-gradient(120% 90% at 50% -10%, oklch(0.83 0.19 92 / 0.22) 0%, transparent 60%),
+        radial-gradient(70% 60% at 90% 20%, oklch(0.72 0.16 165 / 0.14) 0%, transparent 70%);
+      --gradient-cta: linear-gradient(135deg, oklch(0.86 0.19 96) 0%, oklch(0.78 0.2 70) 100%);
+      --shadow-glow: 0 18px 60px -18px oklch(0.83 0.19 92 / 0.55);
+      --shadow-card: 0 20px 50px -30px oklch(0 0 0 / 0.9);
+    }
+
+    * {
+      border-color: var(--border);
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .hero-bg {
+      background-image: var(--gradient-hero);
+    }
+
+    .cta-surface {
+      background-image: var(--gradient-cta);
+      color: var(--primary-foreground);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .panel {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 18px 60px -18px oklch(0.83 0.19 92 / 0.5); }
+      50% { box-shadow: 0 18px 80px -10px oklch(0.83 0.19 92 / 0.85); }
+    }
+
+    .cta-pulse {
+      animation: pulse-ring 2.6s ease-in-out infinite;
+    }
+
+    details > summary::-webkit-details-marker,
+    details > summary::marker {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- HERO -->
+    <section class="hero-bg px-5 pt-20 pb-16 sm:pt-28 sm:pb-24">
+      <div class="mx-auto w-full max-w-3xl text-center">
+        <span class="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Botón Antibloqueo</span>
+        <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-6xl">Deja de quedarte pegado sin saber qué hacer</h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">Herramienta que decide por ti una sola acción concreta según tu energía y tus minutos disponibles, sin listas para pensar.</p>
+
+        <div class="mx-auto mt-10 max-w-3xl">
+          <div class="panel overflow-hidden rounded-2xl shadow-2xl">
+            <img src="https://craft-your-sales-site.lovable.app/__l5e/assets-v1/7c870d5f-db20-4555-8f23-291725812150/boton-antibloqueo-hero.png" alt="Mockup promocional del Botón Antibloqueo con el botón rojo, celular y oferta de $8" class="w-full" loading="eager" />
+          </div>
+        </div>
+
+        <ul class="mx-auto mt-12 grid max-w-2xl gap-3 text-left">
+          <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Por qué una lista de opciones te bloquea más: elegir ya es la parte difícil.</span></li>
+          <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Una sola acción en 10 segundos, sin pensar, sin decidir, sin más pestañas abiertas.</span></li>
+          <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">El Modo Crisis que nadie más ofrece para el minuto exacto en que no puedes con nada.</span></li>
+          <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Tu Menú Confirmado crece solo con lo que ya probaste y sí funcionó.</span></li>
+          <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Cero lectura, cero teoría sobre dopamina: solo aprietas y haces.</span></li>
+        </ul>
+
+        <div class="mt-12 text-center">
+          <p class="text-sm uppercase tracking-[0.2em] text-muted-foreground">De <span class="line-through">$47</span> por</p>
+          <p class="font-display text-6xl font-extrabold text-primary">$8</p>
+          <p class="mt-2 text-muted-foreground">Cuesta menos que un café y decide por ti en 10 segundos.</p>
+          <div class="mt-8 flex flex-col items-center gap-3">
+            <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Quiero dejar de quedarme pegado</a>
+            <p class="text-sm text-muted-foreground">Garantía incondicional de 7 días</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿ES PARA MÍ? -->
+    <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Diagnóstico rápido</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">¿Esto es para mí?</h2>
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+          <li class="panel rounded-xl px-5 py-4 text-sm leading-relaxed">Sabes exactamente qué tienes que hacer y aun así no logras arrancar.</li>
+          <li class="panel rounded-xl px-5 py-4 text-sm leading-relaxed">Te quedas mirando la lista de pendientes sin elegir por dónde empezar.</li>
+          <li class="panel rounded-xl px-5 py-4 text-sm leading-relaxed">Ya probaste apps de hábitos y las abandonaste antes de la semana.</li>
+          <li class="panel rounded-xl px-5 py-4 text-sm leading-relaxed">Hay días en que no puedes con nada y ni siquiera sabes por dónde empezar.</li>
+        </ul>
+        <p class="mt-6 font-semibold text-primary">Si respondiste que sí a 3 o más, sigue leyendo.</p>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl">Ese peso en el pecho de saber qué hacer y no poder moverte</h2>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>Sabes exactamente qué tienes que hacer. Y aun así te quedas ahí, congelado, mirando la pantalla, sintiendo otra vez lo mismo.</p>
+          <p>El problema es la <strong class="text-foreground">Pared de Elegir</strong>. Tu cabeza no se traba por pereza, se traba porque decidir entre opciones ya es una tarea, y es justo la que no te queda energía para hacer.</p>
+          <p>Las listas, los planners y el "solo hazlo" fallaron porque te seguían pidiendo que decidieras. Decidir era el problema desde el inicio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Cómo funciona el método</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Distinto de una lista. No decides, aprietas.</h2>
+        <p class="mt-4 text-muted-foreground">3 pasos simples para salir del bloqueo y llegar a estar en movimiento.</p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="panel rounded-2xl p-6">
+            <span class="font-display text-4xl font-extrabold text-primary/40">01</span>
+            <h3 class="mt-3 text-lg font-bold">Estado Actual</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Indicas tu nivel de energía y tus minutos disponibles en dos toques rápidos.</p>
+          </div>
+          <div class="panel rounded-2xl p-6">
+            <span class="font-display text-4xl font-extrabold text-primary/40">02</span>
+            <h3 class="mt-3 text-lg font-bold">Botón Antibloqueo</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">El sistema cruza tus datos y elige una sola acción posible para ese momento.</p>
+          </div>
+          <div class="panel rounded-2xl p-6">
+            <span class="font-display text-4xl font-extrabold text-primary/40">03</span>
+            <h3 class="mt-3 text-lg font-bold">Acción Lista</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Recibes qué hacer ahora mismo, sin tener que decidir nada más por tu cuenta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSTO DE NO ACTUAR -->
+    <section class="px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <div class="panel rounded-3xl border-destructive/40 p-8 sm:p-10">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Cada bloqueo que ignoras se vuelve más pesado</h2>
+          <p class="mt-4 leading-relaxed text-muted-foreground">El bloqueo no se resuelve solo con fuerza de voluntad. Cada tarea que pospones hoy se suma a la de mañana, y la culpa crece con ella. Decidir hoy cuesta menos que seguir cargando lo de ayer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BONOS -->
+    <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Incluido en tu acceso</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Bonos exclusivos</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="panel rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-primary">Bono 1: Modo Crisis</h3>
+            <p class="mt-2 font-semibold">Para cuando no puedes con nada.</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Un botón aparte que entrega una sola micro acción de 2 minutos en el bloqueo total.</p>
+          </div>
+          <div class="panel rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-primary">Bono 2: Menú Relámpago</h3>
+            <p class="mt-2 font-semibold">Diez segundos y ya sabes qué hacer.</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Genera tu próxima acción al instante, sin preguntas largas ni configuraciones previas.</p>
+          </div>
+          <div class="panel rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-primary">Bono 3: Menú Confirmado</h3>
+            <p class="mt-2 font-semibold">Tu colección personal de lo que sí funciona.</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Guarda cada acción que funcionó y arma tu propio menú sin esfuerzo extra.</p>
+          </div>
+          <div class="panel rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-primary">Bono 4: Tarjeta Semanal</h3>
+            <p class="mt-2 font-semibold">Mira tu semana resuelta en una sola imagen.</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Exporta tu Menú Confirmado como tarjeta visual para repasar o compartir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Lo que están diciendo</h2>
+        <div class="mt-8 grid gap-4">
+          <blockquote class="panel rounded-2xl p-6">
+            <p class="text-lg leading-relaxed">“Dejé de perder 20 minutos decidiendo qué hacer. Aprieto el botón y ya está.”</p>
+            <footer class="mt-3 text-sm font-semibold text-accent">Camila, 27</footer>
+          </blockquote>
+          <blockquote class="panel rounded-2xl p-6">
+            <p class="text-lg leading-relaxed">“El Modo Crisis me sacó de un bloqueo de horas en 2 minutos, sin drama.”</p>
+            <footer class="mt-3 text-sm font-semibold text-accent">Rodrigo, 31</footer>
+          </blockquote>
+          <blockquote class="panel rounded-2xl p-6">
+            <p class="text-lg leading-relaxed">“Pensé que era otra app de hábitos más. No pide constancia, solo la aprieto cuando la necesito.”</p>
+            <footer class="mt-3 text-sm font-semibold text-accent">Valentina, 24</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section id="comprar" class="hero-bg border-y border-border px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary">Resumen de tu acceso</p>
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Todo lo que recibes hoy</h2>
+        <div class="panel mt-8 overflow-hidden rounded-2xl">
+          <table class="w-full text-left text-sm sm:text-base">
+            <thead class="bg-secondary/60">
+              <tr><th class="px-5 py-3 font-semibold">Componente</th><th class="px-5 py-3 text-right font-semibold">Valor original</th></tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-border"><td class="px-5 py-3">Botón Antibloqueo</td><td class="px-5 py-3 text-right text-muted-foreground">$47</td></tr>
+              <tr class="border-t border-border"><td class="px-5 py-3">Modo Crisis</td><td class="px-5 py-3 text-right text-muted-foreground">$19</td></tr>
+              <tr class="border-t border-border"><td class="px-5 py-3">Menú Relámpago</td><td class="px-5 py-3 text-right text-muted-foreground">$17</td></tr>
+              <tr class="border-t border-border"><td class="px-5 py-3">Menú Confirmado</td><td class="px-5 py-3 text-right text-muted-foreground">$17</td></tr>
+              <tr class="border-t border-border"><td class="px-5 py-3">Tarjeta Semanal</td><td class="px-5 py-3 text-right text-muted-foreground">$12</td></tr>
+              <tr class="border-t border-border bg-secondary/40 font-bold"><td class="px-5 py-4">Valor total</td><td class="px-5 py-4 text-right">$112</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-10 text-center">
+          <p class="text-lg font-semibold text-accent">Hoy ahorras $104</p>
+          <p class="font-display text-6xl font-extrabold text-primary">$8</p>
+          <p class="mt-1 text-sm uppercase tracking-[0.2em] text-muted-foreground">Precio de hoy</p>
+          <div class="mt-8 flex flex-col items-center gap-3">
+            <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Probar sin riesgo ahora</a>
+            <p class="text-sm text-muted-foreground">Acceso inmediato desde el navegador</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTÍA -->
+    <section class="px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <div class="panel rounded-3xl border-accent/40 p-8 text-center sm:p-10">
+          <h2 class="text-2xl font-extrabold sm:text-3xl">Garantía incondicional de 7 días</h2>
+          <p class="mt-3 font-semibold text-accent">7 días de seguridad total.</p>
+          <p class="mt-3 leading-relaxed text-muted-foreground">Si lo pruebas y sientes que no es para ti, te devolvemos tu dinero. Sin preguntas incómodas. Sin trámites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <h2 class="text-3xl font-extrabold sm:text-4xl">Preguntas frecuentes</h2>
+        <div class="mt-8 grid gap-3">
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Cómo accedo?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Acceso inmediato después de la compra, directo desde el navegador.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Es un curso en video?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">No. Es una herramienta que decide por ti, no contenido para ver.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Cuánto tiempo toma ver resultados?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Recibes tu primera acción en menos de 10 segundos de empezar.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Necesito experiencia previa?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">No, solo indicas tu energía y tus minutos disponibles.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Funciona en el celular?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Sí, está pensado para usarse desde el celular.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Y si ya probé apps de hábitos y las dejé?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Mejor todavía. Esta no pide constancia diaria, solo la usas cuando la necesitas.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Sirve si solo sospecho que tengo TDAH y no tengo diagnóstico?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Sí. Sirve para cualquiera que se bloquea al decidir, sin necesidad de diagnóstico.</p>
+          </details>
+          <details class="panel group rounded-xl px-5 py-4">
+            <summary class="cursor-pointer list-none font-semibold marker:hidden"><span class="mr-2 inline-block text-primary transition-transform group-open:rotate-90">›</span>¿Qué pasa si la acción que me da no me sirve?</summary>
+            <p class="mt-3 pl-5 text-sm leading-relaxed text-muted-foreground">Aprietas de nuevo y el sistema te entrega otra acción distinta al instante.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="hero-bg px-5 py-16 text-center sm:py-24">
+      <div class="mx-auto w-full max-w-3xl">
+        <h2 class="text-3xl font-extrabold leading-tight sm:text-5xl">Deja de quedarte pegado en tu propia cabeza</h2>
+        <div class="mx-auto mt-6 max-w-xl space-y-3 text-lg text-muted-foreground">
+          <p>Merecías dejar de sentir ese peso de no saber por dónde empezar.</p>
+          <p>Merecías una acción clara en vez de una lista más para decidir.</p>
+          <p class="font-semibold text-foreground">Hoy es el día de dejar de quedarte pegado y empezar a moverte.</p>
+        </div>
+        <div class="mx-auto mt-10 max-w-3xl">
+          <div class="panel overflow-hidden rounded-2xl shadow-2xl">
+            <img src="https://craft-your-sales-site.lovable.app/__l5e/assets-v1/2c9042bd-8676-4266-a487-a23cbc31e782/boton-antibloqueo-mockup.png" alt="Vista previa de la app Botón Antibloqueo en un celular" class="w-full" loading="lazy" />
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col items-center gap-3">
+          <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Acabar con el bloqueo de no saber qué hacer</a>
+          <p class="text-sm text-muted-foreground">Hoy $8 · Garantía de 7 días</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-border px-5 py-10 text-center text-xs text-muted-foreground">
+      © 2026 Botón Antibloqueo. Todos los derechos reservados.
+    </footer>
+  </main>
+</body>
+</html>
