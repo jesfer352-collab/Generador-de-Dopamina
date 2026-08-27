@@ -64,56 +64,56 @@
       --border: oklch(0.31 0.02 265);
       --input: oklch(0.31 0.02 265);
       --surface: oklch(0.19 0.017 265);
-
+ 
       --gradient-hero: radial-gradient(120% 90% at 50% -10%, oklch(0.83 0.19 92 / 0.22) 0%, transparent 60%),
         radial-gradient(70% 60% at 90% 20%, oklch(0.72 0.16 165 / 0.14) 0%, transparent 70%);
       --gradient-cta: linear-gradient(135deg, oklch(0.86 0.19 96) 0%, oklch(0.78 0.2 70) 100%);
       --shadow-glow: 0 18px 60px -18px oklch(0.83 0.19 92 / 0.55);
       --shadow-card: 0 20px 50px -30px oklch(0 0 0 / 0.9);
     }
-
+ 
     * {
       border-color: var(--border);
     }
-
+ 
     body {
       background-color: var(--background);
       color: var(--foreground);
       font-family: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-
+ 
     h1, h2, h3 {
       font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
       letter-spacing: -0.02em;
       text-wrap: balance;
     }
-
+ 
     .hero-bg {
       background-image: var(--gradient-hero);
     }
-
+ 
     .cta-surface {
       background-image: var(--gradient-cta);
       color: var(--primary-foreground);
       box-shadow: var(--shadow-glow);
     }
-
+ 
     .panel {
       background-color: var(--card);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-card);
     }
-
+ 
     @keyframes pulse-ring {
       0%, 100% { box-shadow: 0 18px 60px -18px oklch(0.83 0.19 92 / 0.5); }
       50% { box-shadow: 0 18px 80px -10px oklch(0.83 0.19 92 / 0.85); }
     }
-
+ 
     .cta-pulse {
       animation: pulse-ring 2.6s ease-in-out infinite;
     }
-
+ 
     details > summary::-webkit-details-marker,
     details > summary::marker {
       display: none;
@@ -128,13 +128,13 @@
         <span class="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Botón Antibloqueo</span>
         <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-6xl">Deja de quedarte pegado sin saber qué hacer</h1>
         <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">Herramienta que decide por ti una sola acción concreta según tu energía y tus minutos disponibles, sin listas para pensar.</p>
-
+ 
         <div class="mx-auto mt-10 max-w-3xl">
           <div class="panel overflow-hidden rounded-2xl shadow-2xl">
             <img src="https://craft-your-sales-site.lovable.app/__l5e/assets-v1/7c870d5f-db20-4555-8f23-291725812150/boton-antibloqueo-hero.png" alt="Mockup promocional del Botón Antibloqueo con el botón rojo, celular y oferta de $8" class="w-full" loading="eager" />
           </div>
         </div>
-
+ 
         <ul class="mx-auto mt-12 grid max-w-2xl gap-3 text-left">
           <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Por qué una lista de opciones te bloquea más: elegir ya es la parte difícil.</span></li>
           <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Una sola acción en 10 segundos, sin pensar, sin decidir, sin más pestañas abiertas.</span></li>
@@ -142,19 +142,19 @@
           <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Tu Menú Confirmado crece solo con lo que ya probaste y sí funcionó.</span></li>
           <li class="panel flex gap-3 rounded-xl px-5 py-4"><span class="mt-0.5 text-accent">✦</span><span class="text-sm leading-relaxed sm:text-base">Cero lectura, cero teoría sobre dopamina: solo aprietas y haces.</span></li>
         </ul>
-
+ 
         <div class="mt-12 text-center">
           <p class="text-sm uppercase tracking-[0.2em] text-muted-foreground">De <span class="line-through">$47</span> por</p>
           <p class="font-display text-6xl font-extrabold text-primary">$8</p>
           <p class="mt-2 text-muted-foreground">Cuesta menos que un café y decide por ti en 10 segundos.</p>
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Quiero dejar de quedarme pegado</a>
+            <a href="https://pay.hotmart.com/G107345443P?off=8ltkd808" target="_blank" rel="noopener" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Quiero dejar de quedarme pegado</a>
             <p class="text-sm text-muted-foreground">Garantía incondicional de 7 días</p>
           </div>
         </div>
       </div>
     </section>
-
+ 
     <!-- ¿ES PARA MÍ? -->
     <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -169,7 +169,7 @@
         <p class="mt-6 font-semibold text-primary">Si respondiste que sí a 3 o más, sigue leyendo.</p>
       </div>
     </section>
-
+ 
     <!-- PROBLEMA -->
     <section class="px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -181,7 +181,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- CÓMO FUNCIONA -->
     <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -207,7 +207,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- COSTO DE NO ACTUAR -->
     <section class="px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -217,7 +217,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- BONOS -->
     <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -247,7 +247,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- TESTIMONIOS -->
     <section class="px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -268,7 +268,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- OFERTA -->
     <section id="comprar" class="hero-bg border-y border-border px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -294,13 +294,13 @@
           <p class="font-display text-6xl font-extrabold text-primary">$8</p>
           <p class="mt-1 text-sm uppercase tracking-[0.2em] text-muted-foreground">Precio de hoy</p>
           <div class="mt-8 flex flex-col items-center gap-3">
-            <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Probar sin riesgo ahora</a>
+            <a href="https://pay.hotmart.com/G107345443P?off=8ltkd808" target="_blank" rel="noopener" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Probar sin riesgo ahora</a>
             <p class="text-sm text-muted-foreground">Acceso inmediato desde el navegador</p>
           </div>
         </div>
       </div>
     </section>
-
+ 
     <!-- GARANTÍA -->
     <section class="px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -311,7 +311,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- FAQ -->
     <section class="border-y border-border bg-surface px-5 py-16 sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -352,7 +352,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- CIERRE -->
     <section class="hero-bg px-5 py-16 text-center sm:py-24">
       <div class="mx-auto w-full max-w-3xl">
@@ -368,12 +368,12 @@
           </div>
         </div>
         <div class="mt-10 flex flex-col items-center gap-3">
-          <a href="#comprar" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Acabar con el bloqueo de no saber qué hacer</a>
+          <a href="https://pay.hotmart.com/G107345443P?off=8ltkd808" target="_blank" rel="noopener" class="cta-surface cta-pulse inline-flex w-full max-w-xl items-center justify-center rounded-2xl px-8 py-5 text-center text-base font-bold uppercase tracking-wide transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99] sm:text-lg">Acabar con el bloqueo de no saber qué hacer</a>
           <p class="text-sm text-muted-foreground">Hoy $8 · Garantía de 7 días</p>
         </div>
       </div>
     </section>
-
+ 
     <footer class="border-t border-border px-5 py-10 text-center text-xs text-muted-foreground">
       © 2026 Botón Antibloqueo. Todos los derechos reservados.
     </footer>
